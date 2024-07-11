@@ -9,6 +9,7 @@ import {
 import Head from "next/head";
 import Image from "next/image";
 import React from "react";
+import { Refresh } from "@mui/icons-material";
 import styles from "../styles/Home.module.css";
 
 export default function App() {
@@ -32,11 +33,19 @@ export default function App() {
       </Typography>
       <Box>
         <Typography variant="h4">How's your mood?</Typography>
-        <Box>
+        <Box
+          sx={{
+            display: "flex",
+            width: "100%",
+            maxWidth: "500px",
+            justifyContent: "space-between",
+          }}
+        >
           {[1, 2, 3, 4, 5].map((n) => (
             <ToggleButton
               key={n}
-              sx={{ maxWidth: "20%" }}
+              color="primary"
+              sx={{ maxWidth: "20%", border: "none", borderRadius: "20px" }}
               value={n}
               onClick={() => setMood(n)}
               selected={mood === n}
@@ -66,6 +75,8 @@ export default function App() {
             <Box key={issue} sx={{ padding: "5px" }}>
               <ToggleButton
                 value={issue}
+                sx={{ borderRadius: "10px" }}
+                color="primary"
                 selected={issues.includes(issue)}
                 onClick={() => {
                   issues.includes(issue) ? removeIssue(issue) : addIssue(issue);
@@ -76,6 +87,12 @@ export default function App() {
             </Box>
           ))}
         </Box>
+      </Box>
+
+      <Box sx={{ position: "absolute", bottom: 0, right: 0, padding: "20px" }}>
+        <IconButton onClick={() => window.location.reload()}>
+          <Refresh fontSize="large" />
+        </IconButton>
       </Box>
     </Box>
   );
