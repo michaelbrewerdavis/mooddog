@@ -1,27 +1,30 @@
-import { Box, Button, IconButton, Typography } from '@mui/material';
-
-import App from '../src/app'
-import Head from 'next/head';
-import React from 'react'
-import styles from '../styles/Home.module.css';
+import App from "../src/app";
+import { Box } from "@mui/material";
+import Head from "next/head";
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
-        <title>Create Next App</title>
+        <title>mood.dog</title>
         <link rel="icon" href="/mooddog.circle.png" />
       </Head>
 
       <main>
-        <Box sx={{
-          position: "absolute", top: 0, left: 0, bottom: 0, right: 0, backgroundImage: "url(/mooddog.circle.png)",
-          backgroundRepeat: "no-repeat",
-          backgroundPositionX: "100%",
-          backgroundPositionY: "100%",
-          opacity: 0.05
-
-        }}></Box>
+        <Box
+          sx={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            bottom: 0,
+            right: 0,
+            backgroundImage: "url(/mooddog.circle.png)",
+            backgroundRepeat: "no-repeat",
+            backgroundPositionX: "100%",
+            backgroundPositionY: "100%",
+            opacity: 0.05,
+          }}
+        ></Box>
         <App />
       </main>
 
@@ -30,17 +33,8 @@ export default function Home() {
         body {
           padding: 0;
           margin: 0;
-          font-family:
-            -apple-system,
-            BlinkMacSystemFont,
-            Segoe UI,
-            Roboto,
-            Oxygen,
-            Ubuntu,
-            Cantarell,
-            Fira Sans,
-            Droid Sans,
-            Helvetica Neue,
+          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
             sans-serif;
         }
         * {
